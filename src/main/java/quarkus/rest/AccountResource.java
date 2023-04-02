@@ -81,7 +81,7 @@ public class AccountResource {
     @DELETE
     @Path("{accountNumber}")
     @Produces(APPLICATION_JSON)
-    public Response closeAccount(@PathParam("accountNumber") Long accountNumber, String amount) {
+    public Response closeAccount(@PathParam("accountNumber") Long accountNumber) {
         Account oldAccount = getAccount(accountNumber);
         accounts.remove(oldAccount);
         return Response.noContent().build();
